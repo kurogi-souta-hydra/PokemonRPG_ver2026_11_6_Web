@@ -20,36 +20,35 @@ body { padding: 0; margin: 0 }
     height: 720px;
     background: #231F20;
 }
-/* 全画面表示時 */
-:fullscreen #unity-container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: black;
-}
 
-:fullscreen #unity-canvas {
+/* 全画面表示時 */
+#unity-canvas:fullscreen {
     width: min(100vw, 177.7778vh) !important;
     height: min(100vh, 56.25vw) !important;
-    max-width: 100vw;
-    max-height: 100vh;
+
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    background: black;
 }
 
 /* Safari対応 */
-:-webkit-full-screen #unity-container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: black;
-}
-
-:-webkit-full-screen #unity-canvas {
+#unity-canvas:-webkit-full-screen {
     width: min(100vw, 177.7778vh) !important;
     height: min(100vh, 56.25vw) !important;
-    max-width: 100vw;
-    max-height: 100vh;
+
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    background: black;
 }
