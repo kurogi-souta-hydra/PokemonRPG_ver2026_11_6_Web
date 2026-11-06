@@ -31,8 +31,6 @@ body { padding: 0; margin: 0 }
     top: 50%;
     transform: translate(-50%, -50%);
 
-    max-width: none;
-    max-height: none;
     margin: 0;
     background: black;
 }
@@ -47,8 +45,6 @@ body { padding: 0; margin: 0 }
     top: 50%;
     transform: translate(-50%, -50%);
 
-    max-width: none;
-    max-height: none;
     margin: 0;
     background: black;
 }
