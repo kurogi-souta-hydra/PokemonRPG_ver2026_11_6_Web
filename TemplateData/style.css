@@ -14,20 +14,40 @@ body { padding: 0; margin: 0 }
 #unity-build-title { float: right; margin-right: 10px; line-height: 38px; font-family: arial; font-size: 18px }
 #unity-fullscreen-button { cursor:pointer; float: right; width: 38px; height: 38px; background: url('fullscreen-button.png') no-repeat center }
 #unity-warning { position: absolute; left: 50%; top: 5%; transform: translate(-50%); background: white; padding: 10px; display: none }
-/* 全画面表示時 */
-#unity-canvas:fullscreen {
-    width: 100vw !important;
-    height: 100vh !important;
-    max-width: none;
-    max-height: none;
-    object-fit: contain;
+/* 通常表示 */
+#unity-canvas {
+    width: 1280px;
+    height: 720px;
+    background: #231F20;
+}
+
+/* 全画面表示 */
+:fullscreen #unity-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: black;
 }
 
+:fullscreen #unity-canvas {
+    width: min(100vw, 177.7778vh) !important;
+    height: min(100vh, 56.25vw) !important;
+    background: #231F20;
+}
+
 /* Safari対応 */
-#unity-canvas:-webkit-full-screen {
-    width: 100vw !important;
-    height: 100vh !important;
-    object-fit: contain;
+:-webkit-full-screen#unity-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: black;
+}
+
+:-webkit-full-screen #unity-canvas {
+    width: min(100vw, 177.7778vh) !important;
+    height: min(100vh, 56.25vw) !important;
 }
